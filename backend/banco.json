@@ -1,0 +1,31 @@
+{
+  "atletas": [
+    {
+      "id": 2,
+      "nome": "teste",
+      "idade": "teste teste",
+      "genero": "teste",
+      "peso": "teste",
+      "altura": "teste",
+      "nacionalidade": "teste"
+    },
+    {
+      "id": 3,
+      "nome": "teste",
+      "idade": null,
+      "genero": null,
+      "peso": null,
+      "altura": null,
+      "nacionalidade": null
+    },
+    {
+      "id": 4,
+      "nome": "teste",
+      "idade": null,
+      "genero": null,
+      "peso": null,
+      "altura": null,
+      "nacionalidade": null
+    }
+  ]
+}
