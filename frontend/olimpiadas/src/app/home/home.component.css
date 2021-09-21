@@ -1,0 +1,23 @@
+.social-network{
+    list-style: none;
+    padding: 0;
+  }
+  .social-network > li{
+    display: inline;
+    padding: 5px;
+    font-size: 35px;
+    margin:0;
+  }
+  .icoGithub,.icoLinkedin ,.icoYoutube{
+    color: white;
+  
+  }
+  .icoGithub:hover{
+    color:black;
+  }
+  .icoLinkedin:hover{
+    color: #0072b1;
+  }
+  .icoYoutube:hover{
+    color: #c4302b;
+  }

@@ -1,0 +1,118 @@
+<nav class="navbar navbar-light bg-primary">
+  <div class="container-fluid">
+   <h1 style="color:aliceblue">Atletas</h1>
+   <div class="d-flex">
+     <button (click)="clickAdicionarAtletas()" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-dark">Adicionar Atleta</button>
+   </div>
+  </div>
+</nav> 
+
+<div class="container">
+<table class="table mt-3">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">NOME</th>
+      <th scope="col">IDADE</th>
+      <th scope="col">GÊNERO</th>
+      <th scope="col">PESO</th>
+      <th scope="col">ALTURA</th>
+      <th scope="col">NACIONALIDADE</th>
+      <th scope="col">Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let row of homeData">
+      <td>{{row.id}}</td>
+      <td>{{row.nome}}</td>
+      <td>{{row.idade}}</td>
+      <td>{{row.genero}}</td>
+      <td>{{row.peso}}</td>
+      <td>{{row.altura}}</td>
+      <td>{{row.nacionalidade}}</td>
+      
+      <td>
+        <button (click)="onEdit(row)" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"  class="btn btn-info">Editar</button>
+        <button (click)="deleteAtletas(row)" class="btn btn-danger mx-3">Excluir</button>
+      </td>
+    </tr>
+  </tbody>
+</table> </div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Adicionar Atletas</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+  
+        <form [formGroup]="formValue">
+          <div class="mb-3">
+            <label for="nome" class="form-label">NOME</label>
+            <input type="text" formControlName="nome" class="form-control" id="nome" aria-describedby="Nome">
+          </div>
+          <div class="mb-3">
+            <label for="idade" class="form-label">IDADE</label>
+            <input type="text" formControlName="idade" class="form-control" id="idade">
+          </div>
+          <div class="mb-3">
+            <label for="genero" class="form-label">GÊNERO</label>
+            <input type="text" formControlName="genero" class="form-control" id="genero">
+          </div>
+          <div class="mb-3">
+            <label for="peso" class="form-label">PESO</label>
+            <input type="text" formControlName="peso" class="form-control" id="PESO">
+          </div>
+          <div class="mb-3">
+            <label for="ALTURA" class="form-label">ALTURA</label>
+            <input type="text" formControlName="altura" class="form-control" id="ALTURA">
+          </div>
+          <div class="mb-3">
+            <label for="NACIONALIDADE" class="form-label">NACIONALIDADE</label>
+            <input type="text" formControlName="nacionalidade" class="form-control" id="NACIONALIDADE">
+          </div>
+        </form>
+  
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="cancelar"class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+        <button type="button" *ngIf="showAdd" (click)="postHomeDetails()"class="btn btn-primary">Salvar</button>
+        <button type="button" *ngIf="showUpdate" (click)="editarHomeDetails()"class="btn btn-primary">Editar</button>
+      </div>
+    </div>
+  </div>
+  </div>
+  
+  <footer class="page-footer font-small bg-secondary pt-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 d-flex justify-content-center">
+          <h4 class="text-light">Redes Sociais</h4>
+        </div>
+      </div>
+  
+      <div class="row">
+        <div class="col-md-12 d-flex justify-content-center">
+  
+          <ul class="social-network">
+            <li><a href="https://github.com/GabrielSantos-dev" class="icoGithub" title="Github">
+                <fa-icon [icon]="faGithub"></fa-icon>
+              </a></li>
+            <li><a href="https://www.linkedin.com/in/gabrielcristhie/" class="icoLinkedin" title="Linkedin">
+                <fa-icon [icon]="faLinkedin"></fa-icon>
+              </a></li>
+            <li><a href="https://www.youtube.com/channel/UC8rJX7LIEQVo5AovyD1cihw" class="icoYoutube" title="Youtube">
+                <fa-icon [icon]="faYoutube"></fa-icon>
+              </a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright bg-dark text-center py-3 ">
+      <span class="text-light"> &copy; 2021 Copyright: </span>
+      <a class="text-light" href="#">Gabriel Cristhiê Bandeira dos Santos</a>
+    </div>
+  </footer>
